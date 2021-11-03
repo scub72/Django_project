@@ -11,7 +11,7 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - ./db:/var/lib/mysql #/Users/SQB/Wordpress_Docker/KWexpert/db
+      - ./db:/var/lib/mysql 
 
   phpmyadmin:
     image: phpmyadmin
