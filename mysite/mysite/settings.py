@@ -29,8 +29,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# to include app in the project one need to add its App_nameConfig Class in the App_name/apps.py 
+# this case it is polls.apps.PollsConfig in polls/apps.py
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,18 +79,27 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
 
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': 8083,
+    },
+
+    'sqlite3': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3'
     },
        
-    'sqldb': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'exampledb',
-        'USER': 'exampleuser',
-        'PASSWORD': 'examplepass',
-        'HOST': 'localhost',
-        'PORT': '8083',
-    }
+    # 'mysql': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'exampledb',
+    #     'USER': 'exampleuser',
+    #     'PASSWORD': 'examplepass',
+    #     'HOST': 'localhost',
+    #     'PORT': '8083',
+    # }
 }       
 
 
