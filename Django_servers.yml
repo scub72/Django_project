@@ -13,25 +13,25 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
-  phpmyadmin:
-    image: phpmyadmin
-    #container_name: phpmyadmin
-    environment:
-      PMA_HOST: db
-      PMA_ARBITRARY: 1
-    restart: always
-    ports:
-     - 8081:80
-    links:
-     - db:db
-    volumes:
-     - ./phpmyadmin/sessions:/sessions
+  # phpmyadmin:
+  #   image: phpmyadmin
+  #   #container_name: phpmyadmin
+  #   environment:
+  #     PMA_HOST: db
+  #     PMA_ARBITRARY: 1
+  #   restart: always
+  #   ports:
+  #    - 8081:80
+  #   links:
+  #    - db:db
+  #   volumes:
+  #    - ./phpmyadmin/sessions:/sessions
 
 volumes:
   db:
     name: django_db
-  phpmyadmin:
-    name: django_phpmyadmin
+  # phpmyadmin:
+  #   name: django_phpmyadmin
 
 
 # file usage:
